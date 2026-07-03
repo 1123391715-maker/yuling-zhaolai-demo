@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>御灵召来 · 战斗 Demo</title>
+  <style>
+    *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#07111d}
+    body{display:grid;place-items:center;touch-action:none;user-select:none;-webkit-user-select:none}
+    canvas{display:block;width:100vw;height:100vh;object-fit:contain;background:#07111d}
+    @media (min-aspect-ratio:750/1334){canvas{width:auto;height:100vh}}
+    @media (max-aspect-ratio:750/1334){canvas{width:100vw;height:auto}}
+  </style>
+</head>
+<body>
+  <canvas id="game" aria-label="御灵召来游戏画面"></canvas>
+  <script src="./src/config.js"></script>
+  <script src="./src/audio.js"></script>
+  <script src="./src/art.js"></script>
+  <script src="./src/game-v2.js"></script>
+  <script>
+    (function () {
+      var canvas = document.getElementById('game');
+      var game = new YL.Game(canvas, { platform: 'web' });
+      game.start();
+      window.__YL_GAME__ = game;
+    }());
+  </script>
+</body>
+</html>
